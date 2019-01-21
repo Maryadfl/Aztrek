@@ -3,3 +3,4 @@
 config/parameters.php
 *.bak
 uploads/
+node_modules/
