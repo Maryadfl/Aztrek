@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+.container{
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $marge;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

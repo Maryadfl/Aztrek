@@ -1,0 +1,65 @@
+ .btn-discover {
+     display: block;
+     text-align: center;
+     align-content: center;
+     color: $white;
+     font-family: $font-title;
+     font-size: 1rem;
+     text-transform: uppercase;
+     border-radius: 20px;
+     width: 280px;
+     padding: 10px 30px;
+     margin-bottom: 10px;
+     margin: 0 auto;
+     cursor: pointer;
+     
+
+
+ }
+
+ .destinations .btn-discover {
+     background-color: $blue;
+
+ }
+
+ .activites .btn-discover {
+     background-color: $yellow;
+ }
+
+ .selection .btn-discover{
+     background-color:#BDBFEA;
+     width: 180px;
+     padding: 5px 30px;
+     margin: 10px 0 40px 0;
+     
+ }
+
+ .btn-activity {
+     display: block;
+     text-align: center;
+     align-content: center;
+     background-color: $white;
+     color: $yellow;
+     font-family: $font-title;
+     font-size: 1rem;
+     text-transform: uppercase;
+     border-radius: 20px;
+     width: 180px;
+     padding: 10px 30px;
+     margin: 0 auto;
+     cursor: pointer;
+ }
+
+ .btn-activity a {
+     list-style: none;
+ }
+
+ .btn-activity:hover {
+     background-color: $dark-gray;
+     color: white;
+ }
+
+ .partage .btn-discover{
+     background-color: $red;
+     margin-bottom: 40px;
+ }

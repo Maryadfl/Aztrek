@@ -1,0 +1,96 @@
+.header-top {
+    background: url('../images/bg_title.jpg') center;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+
+
+    @media (min-width: $bp-medium) {
+        min-height: 828px;
+
+    }
+
+    @media (min-width: $bp-large) {
+        min-height: 1080px;
+
+    }
+}
+
+.home-infos {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+   
+    top: 40%;
+
+     p{
+        color: $white;
+        font-family:  $font-undertitle;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    @media (min-width: $bp-medium) {
+        margin-top: 10%;
+         right: 30%;
+        top: 30%;
+    }
+    @media (min-width: $bp-large) {
+        margin-top: 10%;
+        right: 40%;
+        top: 20%;
+    }
+
+    
+}
+
+.nav-header{
+    display: flex;
+    justify-content: flex-end;
+}
+.icon-bar{
+    display: flex;
+   
+}
+
+// page pays
+.pays-body .header-top {
+    background: url('../images/keel-billed-toucan-1021048_1920.jpg') center;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+
+
+    @media (min-width: $bp-medium) {
+        min-height: 828px;
+
+    }
+
+    @media (min-width: $bp-large) {
+        min-height: 1080px;
+
+    }
+}
+
+
+// page sejour
+.sejour-body .header-top {
+    background: url('../images/keel-billed-toucan-1021048_1920.jpg') center;
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+
+
+    @media (min-width: $bp-medium) {
+        min-height: 828px;
+
+    }
+
+    @media (min-width: $bp-large) {
+        min-height: 1080px;
+
+    }
+}
+
+

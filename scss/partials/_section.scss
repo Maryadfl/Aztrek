@@ -1,0 +1,458 @@
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.social-nav {
+
+    display: none;
+
+    @media (min-width: $bp-large) {
+        display: block;
+        position: fixed;
+        top: 80%;
+        right: 0;
+        z-index: 2;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: rgba(152, 173, 200, 0.712);
+
+        a {
+            display: block;
+            text-align: center;
+            padding: 5px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 20px;
+        }
+    }
+}
+
+//////* SECTION FILTRES*////////
+
+.options {
+    background-color: $dark-gray;
+
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  padding: 30px;
+
+
+  
+    @media (min-width: $bp-medium) {
+        flex-direction: row;
+    }
+
+
+}
+
+select {
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 30px;
+    border-style: none;
+    background-color: #FFFCFC;
+    cursor: pointer;
+
+}
+
+button {
+    border-color: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-style: none;
+    background-color: $yellow;
+    color: $white;
+    cursor: pointer;
+    
+}
+
+//////* SECTION DESTINATIONS*////////
+.destinations {
+    background: url('../images/bg_worldmap.jpg') no-repeat;
+    background-size: cover;
+
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 40px 0;
+        flex-basis: 100%;
+
+        @media (min-width: $bp-medium) {
+            flex-direction: row;
+            justify-content: space-around;
+            flex-basis: 46%;
+            margin-right: 2%;
+            margin-left: 2%;
+
+
+        }
+
+        @media (min-width: $bp-large) {
+            flex-basis: 29%;
+
+        }
+
+    }
+
+}
+
+.contim {
+    position: relative;
+
+    &>h4 {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        bottom: 0;
+        left: 40%;
+        top: 20%;
+        color: $white;
+
+        @media (min-width: $bp-large) {
+            left: 30%;
+
+        }
+    }
+
+}
+
+.item .continfos {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+    background-color: rgba(39, 121, 125, 0.603);
+    color: #fff;
+    padding: .5rem 1rem;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.item-contenu{
+    display: block;
+    background-color: $blue;
+    width: 100%;
+    height: 230px;
+    margin: 40px 0;
+
+    @media (min-width: $bp-medium) {
+    width: 46%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+@media (min-width: $bp-large) {
+    width: 29%;
+}
+
+    p{
+        color: $white;
+        font-size: 1rem;
+    }
+
+}
+.contenu-contim {
+    &>h4{
+       
+        margin-top: 40px;
+        margin-bottom: 10px
+
+    }
+    &>.btn-hover{
+        margin-top: 50px;
+    }
+
+   
+}
+
+
+.continfos p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-hover {
+
+    background-color: white;
+    color: $blue;
+    font-family: $font-title;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 5px 30px;
+    cursor: pointer;
+
+}
+
+.btn-hover a {
+    list-style: none;
+}
+
+.btn-hover:hover {
+    background-color: $blue;
+    ;
+    color: white;
+}
+
+/* le survol */
+.item:hover .continfos {
+    opacity: 1;
+
+}
+
+//////* SECTION ACTIVITES*////////
+
+
+.photo {
+    position: relative;
+
+    &>h4 {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        bottom: 0;
+        left: 40%;
+        top: 20%;
+        color: $white;
+
+        @media (min-width: $bp-large) {
+            left: 30%;
+
+        }
+    }
+
+}
+.article-activites:hover .photoinfos{
+    opacity: 1;
+}
+.photoinfos{
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+    color: #fff;
+    padding: .5rem 1rem;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;  
+    background-color: rgba(246, 199, 45, 0.753);
+    padding: 1rem;
+    cursor: pointer;
+}
+.activites .btn-discover{
+    margin-bottom: 80px;
+    margin-top: 40px;
+}
+
+
+
+//////* SECTION SELECTION *////////
+
+.selection {
+    background: url("../images/voyageinsolite.jpg")center;
+    background-size: cover;
+    min-height: 200px;
+
+    .title-section {
+        text-align: left;
+        &>h2{
+            color: $yellow;
+        }
+
+        &>h3 {
+            color: #fff;
+            margin-top: -40px;
+            font-size: 2.5rem;
+
+        }
+    }
+
+    @media (min-width: $bp-medium) {
+        min-height: 280px;
+
+    }
+
+    @media (min-width: $bp-large) {
+        min-height: 400px;
+
+    }
+}
+
+
+
+//////* SECTION PARTAGE *////////
+
+.partage {
+    background-color: $bg-endirect;
+}
+
+.interviews{
+
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+
+}
+
+
+.travelbook{
+    max-width: 460px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+    @media (min-width: $bp-medium) {
+       
+      flex-basis: 48%;
+
+    }
+    @media (min-width: $bp-large) {
+        flex-basis: 30%;
+      
+
+    }
+}
+.interview:nth-of-type(2){
+    @media (min-width: $bp-medium) {
+        /*padding-left: 20px;
+        padding-right: 20px;*/
+
+    }
+}
+.interview-infos{
+    background-color: $red;
+    color: $white;
+    min-width: 320px;
+    padding: 5px 0;
+    
+    }
+
+.interview-infos p{
+    margin: 0;
+    text-align: center;
+}
+.interview-infos p:before{
+    content: url('../images/quotation-mark.png');
+    padding-right: 10px;
+}
+    
+
+//////* SECTION EN DIRECT *////////
+
+.instagram{
+   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   padding: 20px 0;
+            
+     }
+
+
+
+
+// page pays
+
+.pays-body .gallery{
+    margin: 20px 0 40px 0;
+}
+.pays-body .textpays{
+    text-align: center;
+}
+
+
+.pays-body .gallery .card-text,
+.pays-body .gallery .prix
+ {
+    text-align: left;
+   
+}
+
+.pays-body .list{
+    text-align: center;
+}
+
+.pays-body .gallery .card-title{
+    font-family: $font-undertitle;
+    text-transform: uppercase;
+    color: $blue;
+    padding-top: 10px;
+   
+}
+
+.thumbnail {
+    padding: 0 0 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: -5px 6px 5px -1px rgba(237,237,237,1);
+    -moz-box-shadow: -5px 6px 5px -1px rgba(237,237,237,1);
+    box-shadow: -5px 6px 5px -1px rgba(237,237,237,1);
+  }
+.list{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.fa-calendar-alt,
+.fa-globe-americas,
+.fa-mountain{
+    color: $blue;
+}
+
+.text-center{
+    margin-top: 20px;
+}
+
+
+.fa-quote-left,
+.fa-quote-right,
+.expert .title-section h3{
+  color: $yellow;
+}
+.expert p{
+    text-align: center;
+}
+
+
+
+//PAGE SEJOUR
+
+.sejour-body .departure .title-section h3{
+
+    color: $blue;
+}
+
+.sejour-body .comments .title-section h3{
+    color: $red;
+}

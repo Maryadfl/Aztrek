@@ -1,0 +1,74 @@
+.footer-bottom {
+    background-color: $blue;
+}
+
+.footer-bottom img {
+    margin: 10px 0;
+
+
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+
+
+
+}
+
+.infos-footer p {
+    color: $white;
+    font-size: 0.875rem;
+    flex-direction: column;
+
+
+}
+
+.nav-menu-destinations,
+.nav-menu-activites,
+.nav-menu-partager,
+.nav-menu-apropos {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    padding-left: 20px;
+}
+
+.nav-footer {
+    display: flex;
+    align-items: center;
+}
+
+.nav-footer ul {
+    display: flex;
+}
+
+.nav-footer ul li a {
+    display: inline-block;
+    background-size: contain;
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.btn-fb {
+    background-image: url('../images/social-facebook-circular-button.png');
+}
+
+.btn-yt {
+    background-image: url('../images/social-youtube-circular-button.png');
+}
+
+.btn-tw {
+    background-image: url('../images/social-twitter-circular-button.png');
+}
+
+.btn-pinterest {
+    background-image: url('../images/pinterest-social-logo.png');
+}
+
+.copyright {
+    color: $white;
+    font-size: 0.875rem;
+}

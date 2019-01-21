@@ -1,0 +1,140 @@
+.header-logo {
+    img {
+        height: 100px;
+
+    }
+}
+
+.top-bar {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.burger {
+    font-size: 0;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+
+    .fa {
+        font-size: 3rem;
+        padding-top: 10px;
+
+        &:hover,
+        &:focus {
+            color: $dark-gray;
+        }
+    }
+
+    @media (min-width: $bp-large) {
+        display: none;
+    }
+}
+
+.sidr ul li a,
+.sidr ul li span {
+    color: $dark-gray;
+
+
+}
+.sidr-class-icon-bar{
+   position:absolute;
+   display: flex;
+  
+   
+}
+
+.sidr-class-icon-bar a{
+    padding-bottom: 5px;
+}
+.header-logo {
+    @media (min-width: $bp-large) {
+        display: none;
+    }
+}
+
+.nav-total {
+    display: none;
+    width: 100%;
+
+    @media (min-width: $bp-large) {
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px;
+        /* pour aligner nav avec le contenu*/
+        justify-content: space-between;
+
+
+        .header-logo-lg,
+        .nav-header {
+            flex-basis: 50%;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        a {
+
+            display: block;
+            color: $dark-gray;
+            font-family: $font-title;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: .5rem;
+            margin: 0 .5rem;
+
+            @media (min-width: $bp-large) {
+                font-size: 1.5rem;
+
+            }
+
+            &:hover,
+            &:focus {
+
+                text-decoration: underline;
+                color: white;
+
+            }
+        }
+
+    }
+}
+
+.nav-header {
+    justify-content: flex-end;
+}
+
+@media (min-width: $bp-large) {
+    .main-nav > ul {
+        >li{
+            position: relative;
+        }
+        ul{
+            position: absolute;
+            left:-9999px;
+            width: 250px;
+            z-index: 9999;
+            li a{
+                padding-top: 0;
+                font-size: 1.125rem;
+
+
+            }
+        }
+        >li:hover ul{
+            left: 0;
+        }
+    }
+}
+//page pays
+
+.pays-body .nav-total a {
+    color: white;
+
+}

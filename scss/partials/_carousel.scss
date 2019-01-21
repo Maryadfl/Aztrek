@@ -1,0 +1,82 @@
+.owl-carousel {
+    padding: 0 15px;
+
+    button {
+        outline: 0;
+    }
+
+    .item {
+        padding: 0 15px;
+    }
+
+}
+
+.item-infos {
+    text-align: center;
+}
+
+.item-infos a {
+    text-decoration: none;
+}
+
+.owl-theme .owl-nav {
+    font-size: 5rem;
+    padding-left: 10px;
+    color: $yellow;
+}
+
+
+
+.owl-theme .owl-dots .owl-dot span {
+    background-color: $yellow;
+    width: 20px;
+    height: 20px;
+
+}
+.owl-theme .owl-nav [class*='owl-']:hover{
+    background: none;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background-color: $yellow;
+}
+
+.owl-theme .owl-nav button {
+    position: absolute;
+    top: 30%;
+
+}
+
+.owl-theme .owl-nav .owl-prev {
+    left: 0;
+
+}
+
+.owl-theme .owl-nav .owl-next {
+    right: 0;
+}
+
+
+
+// @media (min-width: $bp-large) {
+//     .owl-item.cloned{
+//       display: none !important;
+//     }
+//     .owl-stage{
+//       transform:none !important;
+//       transition: none !important;
+//       width: auto !important;
+//     }
+//     .owl-item{
+//       width: auto !important;
+//     }
+//     .no-js .owl-carousel, .owl-carousel.owl-loaded,
+//     .interview{
+//         display: flex;
+//         flex-direction: row;
+//         > div {
+//             flex-basis: 33.33%;
+//         }
+//     }
+//   }
