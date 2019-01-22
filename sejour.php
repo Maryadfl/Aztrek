@@ -10,7 +10,7 @@ $sejour = getOneSejour($id);
 $departs = getAllDepartsBySejour($id);
 
 
-getHeader("Accueil", "Aztrek, site de voyage spécialisé dans les treks en Amérique centrale...")
+getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Amérique centrale...")
 ?>
 
 
@@ -26,10 +26,10 @@ getHeader("Accueil", "Aztrek, site de voyage spécialisé dans les treks en Amé
 
                 <article class="sejour-content d-flex">
                         <div class="card mb-3">
-                                <img src="./images/costaricasejour.jpg" class="card-img-top" alt="...">
+                                <img src="images/<?= $sejour["image"]; ?>" alt="<?= $sejour["title"] ; ?>" class="card-img-top">
                                     <div class="card-body">
                                         <ul class="list">
-                                            <i class="fas fa-binoculars fa-lg text-info "></i> <?= $sejour["category"] ; ?></li>
+                                            <li class="binoculars"><i class="fas fa-binoculars"></i> <?= $sejour["category"] ; ?></li>
                                             <li class="pays"><i class="fas fa-globe-americas"></i> <?= $sejour["country"] ; ?></li>
                                             <li class="days"><i class="far fa-calendar-alt"></i> <?= $sejour["nb_days"] ; ?></li>
                                             <li class="nivel"><i class="fas fa-mountain"></i> <?= $sejour["levels"] ; ?></li>

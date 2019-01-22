@@ -83,27 +83,26 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Déja inscrit</h5>
+                <a class="mx-auto" href="<?=SITE_URL ?>/create_account.php"><i class="fas fa-user-plus"></i>Inscrivez-vous</a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="admin/" method="post">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Email*</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <input type="text" name="email" class="form-control" id="recipient-name">
                         <label for="recipient-name" class="col-form-label">Mot de passe*</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <input type="password" name="password" class="form-control" id="recipient-name">
                     </div>
-
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Mémoriser</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Se connecter</button>
                 </form>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Mémoriser</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Se connecter</button>
+
             </div>
         </div>
     </div>

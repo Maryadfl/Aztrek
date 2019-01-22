@@ -1,5 +1,5 @@
 <div class="thumbnail">
-    <img src="./images/circuit1.jpg" alt="" width="400" height="300">
+    <img src= "images/<?= $sejour["image"]; ?>" alt="<?= $sejour["title"] ; ?>" width="400" height="300">
     <h5 class="card-title"><a href="sejour.php?id=<?= $sejour["id"]; ?>"><?= $sejour["title"]; ?></a></h5>
     <ul class="list">
         <li class="pays"><i class="fas fa-globe-americas"></i> <?= $sejour["country"] ; ?></li>
