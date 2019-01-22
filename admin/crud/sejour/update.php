@@ -15,7 +15,7 @@ foreach ($photo_liste_tags as $tag) {
 require_once '../../layout/header.php';
 ?>
 
-<h1>Modification d'une photo</h1>
+<h1>Modification d'un séjour</h1>
 
 <form action="update_query.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">

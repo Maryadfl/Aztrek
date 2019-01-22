@@ -16,9 +16,9 @@ require_once '../../layout/header.php';
         <div class="form-group">
             <label>Séjour</label>
             <select name="sejour_id" class="form-control">
-                <?php foreach ($sejours as $sejour) : ?>
-                    <option value="<?php echo $sejour["id"]; ?>">
-                        <?php echo $sejour["title"]; ?>
+                <?php foreach ($countries as $country) : ?>
+                    <option value="<?php echo $country["id"]; ?>">
+                        <?php echo $country["label"]; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
