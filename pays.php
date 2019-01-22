@@ -19,7 +19,7 @@ getHeader("Destinations", "Aztrek, site de voyage spécialisé dans les treks en
                 <h3><?= $country["label"]; ?></h3>
             </div>
 
-            <article class="textpays">
+            <article class="textpays text-center">
                 <?= $country["description"]; ?>
             </article>
 
