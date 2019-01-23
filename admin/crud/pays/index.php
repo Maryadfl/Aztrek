@@ -39,6 +39,8 @@ require_once '../../layout/header.php';
     <thead class="thead-light">
         <tr>
             <th>Libelle</th>
+            <th>Image</th>
+            <th>Description</th>
             <th class="actions">Actions</th>
         </tr>
     </thead>
@@ -46,6 +48,10 @@ require_once '../../layout/header.php';
         <?php foreach ($countries as $country) : ?>
             <tr>
                 <td><?php echo $country['label']; ?></td>
+                <td>
+                    <img src="../../../uploads/<?php echo $country['image']; ?>" class="img-thumbnail">
+                </td>
+                <td><?php echo $country['description']; ?></td>
                 <td class="actions">
                     <a href="update.php?id=<?php echo $country['id']; ?>" class="btn btn-warning">
                         <i class="fa fa-edit"></i>

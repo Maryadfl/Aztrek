@@ -52,11 +52,12 @@ require_once '../../layout/header.php';
             <tr>
                 <td><?php echo $sejour['title']; ?></td>
                 <td>
-                    <img src="../../../images/<?php echo $sejour['image']; ?>" class="img-thumbnail">
+                    <img src="../../../uploads/<?php echo $sejour['image']; ?>" class="img-thumbnail">
                 </td>
                 <td><?php echo $sejour['country']; ?></td>
                 <td><?php echo $sejour['nb_days']; ?></td>
                 <td><?php echo $sejour['levels']; ?></td>
+                
 
                 <td class="actions">
                     <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">

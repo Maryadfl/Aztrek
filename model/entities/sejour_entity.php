@@ -78,12 +78,12 @@ function getOneSejour(int $id): array {
 }
 
 //pour insérer un nouveau séjour
-function insertSejour(string $title, int $country_id, string $image,int $nb_days,string $description_short,  string $description,  int $levels_id,  int $publie, int $user_id) {
+function insertSejour (string $title, int $country_id, string $image, int $nb_days, string $description_short, string $description,  int $levels_id) {
     global $connection;
 
     $query = "
-    INSERT INTO sejour (title, image, nb_days, description, description_short, publie,  user_id, country_id, levels_id) 
-    VALUES (:title, :image, :nb_days, :description, :description_short, :publie, NOW(), :user_id, :country_id, :levels_id)
+    INSERT INTO sejour (title, image, nb_days, description, description_short, country_id, levels_id) 
+    VALUES (:title, :image, :nb_days, :description, :description_short, :country_id, :levels_id)
     ";
 
     $stmt = $connection->prepare($query);
@@ -92,10 +92,9 @@ function insertSejour(string $title, int $country_id, string $image,int $nb_days
     $stmt->bindParam(":description_short", $description_short);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":nb_days", $nb_days);
-    $stmt->bindParam(":publie", $publie);
     $stmt->bindParam(":country_id", $country_id);
     $stmt->bindParam(":levels_id", $levels_id);
-    $stmt->bindParam(":user_id", $user_id);
+
     $stmt->execute();
 }
 

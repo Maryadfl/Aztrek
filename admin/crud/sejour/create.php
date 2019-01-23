@@ -51,6 +51,10 @@ require_once '../../layout/header.php';
             <label>Description</label>
             <textarea name="description" class="form-control"></textarea>
         </div>
+        <div class="form-group">
+            <label>Prix</label>
+            <input type="number" name="price" class="form-control" required>
+        </div>
 
 
         <button type="submit" class="btn btn-success">

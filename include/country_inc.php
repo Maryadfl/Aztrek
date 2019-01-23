@@ -1,6 +1,6 @@
 
     <div class="contim">
-        <img src="images/<?= $country["image"]; ?>" alt="<?= $country["label"] ; ?>">
+        <img src="uploads/<?= $country["image"]; ?>" alt="<?= $country["label"] ; ?>">
         <h4> <?= $country["label"]; ?></h4>
     </div>
 

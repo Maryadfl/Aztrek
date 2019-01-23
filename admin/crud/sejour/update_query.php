@@ -4,23 +4,23 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $id = $_POST['id'];
-$photo = getPhoto($id);
+$sejour = getSejour($id);
 
-$titre = $_POST['titre'];
+$title = $_POST['title'];
 $description = $_POST['description'];
-$category_id = $_POST['category_id'];
+
 $tag_ids = isset($_POST['tag_ids']) ? $_POST['tag_ids'] : [];
 
 // Upload de l'image
 if ($_FILES["image"]["error"] == 0) {
     $filename = $_FILES["image"]["name"];
     $tmp = $_FILES["image"]["tmp_name"];
-    move_uploaded_file($tmp, "../../../images/" . $filename);
+    move_uploaded_file($tmp, "../../../sejour/" . $filename);
 } else {
     // Aucun fichier uploadé
-    $filename = $photo["image"];
+    $filename = $sejour["image"];
 }
 
-updatePhoto($id, $titre, $filename, $description, $categorie_id, $tag_ids);
+updateSejour($id, $title, $filename, $description,  $tag_ids);
 
 header('Location: index.php');

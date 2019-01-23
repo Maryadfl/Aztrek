@@ -9,7 +9,7 @@ require_once '../../layout/header.php';
 <form action="create_query.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label>Titre</label>
-        <input type="text" name="titre" class="form-control" placeholder="Titre" required>
+        <input type="text" name="label" class="form-control" placeholder="Titre" required>
     </div>
     <div class="form-group">
         <label>Image</label>
