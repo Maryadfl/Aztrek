@@ -53,27 +53,7 @@ getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Am�
 
 </section>
      
-        <section class="comments">
-            <div class="container">
-                <div class="title-section">
-                    <h2>#Top Stories</h2>
-                    <h3 class="text-danger">Avis de nos voyageurs</h3>
-                    <p>Aztrek c’est une grande communauté de voyageurs passionnés. Découvrez leurs retours
-                        d’expériences et
-                        leurs avis sur leurs voyages au Costa Rica</p>
-                </div>
-                <div class="form-group">
-                        <label for="email">Email :</label>
-                        <input type="email" class="form-control" id="email" placeholder="Ecrire votre adresse email">
-                      </div>
-                
-                <div class="form-group">
-                        <label for="comment">Laisser votre avis</label>
-                        <textarea class="form-control" rows="5" id="comment" placeholder="Saisir votre avis"></textarea>
-                      </div>
-                      <button type="submit" class="btn bg-danger">Envoyer</button>
-               
-        </section>
+
 
         <section class="departure container">
 
@@ -85,7 +65,7 @@ getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Am�
                 <table class="table table-striped text-center">
                         <thead>
                           <tr class="bg-primary text-light">
-                            <th scope="col">Date départs</th>
+                            <th scope="col">Date départ</th>
                             <th scope="col">Prix</th>
                               <th scope="col">Places disponibles</th>
                             <th scope="col">Réserver</th>
@@ -100,7 +80,7 @@ getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Am�
                             <th scope="row"><?= $depart["date_departure"] ; ?></th>
                             <td><?= $depart["price"] ; ?></td>
                               <td><?= $depart["seat_available"] ; ?></td>
-                            <td><button type="button" class="btn bg-primary">Réserver</button></td>
+                            <td><button type="button" class="btn bg-primary">S'inscrire</button></td>
                            
                           </tr>
                             <?php endforeach; ?>
@@ -110,6 +90,27 @@ getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Am�
 
 
 
+
+        </section>
+        <section class="comments">
+            <div class="container">
+                <div class="title-section">
+                    <h2>#Top Stories</h2>
+                    <h3 class="text-danger">Avis de nos voyageurs</h3>
+                    <p>Aztrek c’est une grande communauté de voyageurs passionnés. Découvrez leurs retours
+                        d’expériences et
+                        leurs avis sur leurs voyages au Costa Rica</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" class="form-control" id="email" placeholder="Ecrire votre adresse email">
+                </div>
+
+                <div class="form-group">
+                    <label for="comment">Laisser votre avis</label>
+                    <textarea class="form-control" rows="5" id="comment" placeholder="Saisir votre avis"></textarea>
+                </div>
+                <button type="submit" class="btn bg-danger">Envoyer</button>
 
         </section>
 

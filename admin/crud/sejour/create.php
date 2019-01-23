@@ -1,7 +1,9 @@
 <?php
 require_once '../../../model/database.php';
 
-$sejours = getAllEntities("sejour");
+$countries = getAllEntities("country");
+$levels = getAllEntities("levels");
+
 
 require_once '../../layout/header.php';
 ?>
@@ -14,8 +16,8 @@ require_once '../../layout/header.php';
             <input type="text" name="title" class="form-control" placeholder="Titre" required>
         </div>
         <div class="form-group">
-            <label>Séjour</label>
-            <select name="sejour_id" class="form-control">
+            <label>Pays</label>
+            <select name="country_id" class="form-control">
                 <?php foreach ($countries as $country) : ?>
                     <option value="<?php echo $country["id"]; ?>">
                         <?php echo $country["label"]; ?>
@@ -24,21 +26,32 @@ require_once '../../layout/header.php';
             </select>
         </div>
         <div class="form-group">
-            <label>Image</label>
-            <input type="file" name="image" class="form-control" required>
+            <label>Niveau</label>
+            <select name="level_id" class="form-control">
+                <?php foreach ($levels as $level) : ?>
+                    <option value="<?php echo $level["id"]; ?>">
+                        <?php echo $level["label"]; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="form-group">
             <label>Nombre de jours</label>
             <input type="number" name="nb_days" class="form-control" required>
         </div>
         <div class="form-group">
-            <label>Description</label>
-            <textarea name="description" class="form-control"></textarea>
+            <label>Image</label>
+            <input type="file" name="image" class="form-control" required>
         </div>
         <div class="form-group">
             <label>Description courte</label>
             <input type="text" name="description_short" class="form-control" placeholder="Description courte" required>
         </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" class="form-control"></textarea>
+        </div>
+
 
         <button type="submit" class="btn btn-success">
             <i class="fa fa-check"></i>

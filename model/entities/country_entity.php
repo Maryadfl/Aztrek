@@ -1,17 +1,17 @@
 <?php
 
-//pour générer les catégories
-function insertCategorie(string $libelle) {
+//pour générer les pays
+function insertCountry(string $label, string $description, string $image) {
     global $connection;
 
 
-    $query = "INSERT INTO  categorie (libelle) VALUES (:libelle)";
+    $query = "INSERT INTO  country (label, description) VALUES (:label)";
 
 
     //Prépare la requête SQL
 
     $stmt = $connection->prepare($query);
-    $stmt->bindParam(":libelle", $libelle);
+    $stmt->bindParam(":label", $label);
 
     //Execute la requête SQL
     $stmt->execute();
@@ -20,18 +20,18 @@ function insertCategorie(string $libelle) {
 }
 
 //fonction pour charger les modifications
-function updateCategorie(int $id,string $libelle) {
+function updateCountry(int $id,string $label) {
     global $connection;
 
 
-    $query = "UPDATE categorie SET libelle = :libelle WHERE id = :id ";
+    $query = "UPDATE country SET label = :label WHERE id = :id ";
 
 
     //Prépare la requête SQL
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
-    $stmt->bindParam(":libelle", $libelle);
+    $stmt->bindParam(":label", $label);
 
     //Execute la requête SQL
     $stmt->execute();

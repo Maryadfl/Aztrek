@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$sejours = getAllEntities("sejour");
+$sejours = getAllSejours();
 
 $error_msg = null;
 if (isset($_GET['errcode'])) {
@@ -41,7 +41,9 @@ require_once '../../layout/header.php';
             <th>Titre</th>
             <th>Image</th>
             <th>Pays</th>
-            <th>Auteur</th>
+            <th>Nombre de jours</th>
+            <th>Niveau</th>
+
             <th class="actions">Actions</th>
         </tr>
     </thead>
@@ -52,8 +54,9 @@ require_once '../../layout/header.php';
                 <td>
                     <img src="../../../images/<?php echo $sejour['image']; ?>" class="img-thumbnail">
                 </td>
-                <td><?php echo $sejour['description_short']; ?></td>
+                <td><?php echo $sejour['country']; ?></td>
                 <td><?php echo $sejour['nb_days']; ?></td>
+                <td><?php echo $sejour['levels']; ?></td>
 
                 <td class="actions">
                     <a href="update.php?id=<?php echo $sejour['id']; ?>" class="btn btn-warning">

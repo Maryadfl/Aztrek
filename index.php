@@ -59,83 +59,15 @@ getHeader("Accueil", "Aztrek, site de voyage spécialisé dans les treks en Amé
                 </div>
                 <div class="gallery">
 
-                    <div class="item">
-                        <div class="contim">
-                            <img src="./images/pyramid-1649598_640.jpg" alt="mexique">
-                            <h4>Mexique</h4>
-                        </div>
-
-                        <div class="continfos">
-
-                            <p>Nos treks au Mexique couvre l’essentiel de l’aire culturelle maya, passant notamment
-                                par
-                                le
-                                Mexique, le Guatemala et le Belize.</p>
-                            <a href="pays.php" class="btn-hover">Découvrir</a>
-                        </div>
-                    </div>
 
 
+                    <?php foreach ($countries as $country) : ?>
 
+                        <div class="item">
+                            <?php include "include/country_inc.php" ?>
+                        </div>
+                    <?php endforeach; ?>
 
-                    <div class="item">
-                        <div class="contim">
-                            <img src="./images/Costa-Rica-floute.jpg" alt="costarica">
-                            <h4>Costa Rica</h4>
-                        </div>
-                        <div class="continfos">
-                            <p>Nos treks au Costa Rica couvre l’essentiel de l’aire culturelle maya, passant
-                                notamment par
-                                le Mexique, le Guatemala et le Belize.</p>
-                            <a href="pays.php" class="btn-hover">Découvrir</a>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="contim">
-                            <img src="./images/salvador.jpg" alt="salvador">
-                            <h4>Salvador</h4>
-                        </div>
-                        <div class="continfos">
-                            <p>Nos treks au Salvador couvre l’essentiel de l’aire culturelle maya, passant notamment
-                                par le
-                                Mexique, le Guatemala et le Belize.</p>
-                            <a href="pays.php" class="btn-hover">Découvrir</a>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="contim">
-                            <img src="./images/guatemala2.jpg" alt="guatemala">
-                            <h4>Guatemala</h4>
-                        </div>
-                        <div class="continfos">
-                            <p>Nos treks au Guatemala couvre l’essentiel de l’aire culturelle maya, passant notamment
-                                par
-                                le Mexique, le Guatemala et le Belize.</p>
-                            <a href="pays.php" class="btn-hover">Découvrir</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="contim">
-                            <img src="./images/honduras.jpg" alt="Honduras">
-                            <h4>Honduras</h4>
-                        </div>
-                        <div class="continfos">
-                            <p>Nos treks au Honduras couvre l’essentiel de l’aire culturelle maya, passant notamment
-                                par le
-                                Mexique, le Guatemala et le Belize.</p>
-                            <a href="pays.php" class="btn-hover">Découvrir</a>
-                        </div>
-                    </div>
-                    <div class="item-contenu">
-                        <div class="contenu-contim">
-
-                            <h4>Carnet de voyage</h4>
-                            <p>Découvrez toutes nos pépites dans toutes nos destinations</p>
-                            <a href="" class="btn-hover">Découvrir</a>
-                        </div>
-                    </div>
 
                 </div>
                 <a href="pays.php" class="btn-discover btn-small">Toutes les destinations</a>

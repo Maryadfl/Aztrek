@@ -1,5 +1,28 @@
 <?php
 
+function getAllSejours() {
+    global $connection;
+
+    $query = "
+    SELECT sejour.*,
+           country.label AS country,
+           levels.label AS levels
+    FROM sejour
+    INNER JOIN country on sejour.country_id = country.id
+    INNER JOIN levels on sejour.levels_id = levels.id
+    GROUP BY sejour.id
+    ";
+
+    //Prépare la requête SQL
+    $stmt = $connection->prepare($query);
+    //Execute la requête SQL
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+
+
 function getAllSejoursByCountry(int $id) {
     global $connection;
 
@@ -23,7 +46,6 @@ function getAllSejoursByCountry(int $id) {
     $stmt->execute();
 
     return $stmt->fetchAll();
-
 }
 
 function getOneSejour(int $id): array {
@@ -55,25 +77,25 @@ function getOneSejour(int $id): array {
 
 }
 
-function insertRecette(string $titre, int $categorie_id, string $image, string $description, string $description_courte, int $couverts, string $temps_prepa, string $temps_cuisson, int $publie, int $utilisateur_id) {
+//pour insérer un nouveau séjour
+function insertSejour(string $title, int $country_id, string $image,int $nb_days,string $description_short,  string $description,  int $levels_id,  int $publie, int $user_id) {
     global $connection;
 
     $query = "
-    INSERT INTO sejour (titre, image, description, description_courte, couverts, temps_prepa, temps_cuisson, publie, date_creation, utilisateur_id, categorie_id) 
-    VALUES (:titre, :image, :description, :description_courte, :couverts, :temps_prepa, :temps_cuisson, :publie, NOW(), :utilisateur_id, :categorie_id)
+    INSERT INTO sejour (title, image, nb_days, description, description_short, publie,  user_id, country_id, levels_id) 
+    VALUES (:title, :image, :nb_days, :description, :description_short, :publie, NOW(), :user_id, :country_id, :levels_id)
     ";
 
     $stmt = $connection->prepare($query);
-    $stmt->bindParam(":titre", $titre);
+    $stmt->bindParam(":title", $title);
     $stmt->bindParam(":image", $image);
+    $stmt->bindParam(":description_short", $description_short);
     $stmt->bindParam(":description", $description);
-    $stmt->bindParam(":description_courte", $description_courte);
-    $stmt->bindParam(":couverts", $couverts);
-    $stmt->bindParam(":temps_prepa", $temps_prepa);
-    $stmt->bindParam(":temps_cuisson", $temps_cuisson);
+    $stmt->bindParam(":nb_days", $nb_days);
     $stmt->bindParam(":publie", $publie);
-    $stmt->bindParam(":categorie_id", $categorie_id);
-    $stmt->bindParam(":utilisateur_id", $utilisateur_id);
+    $stmt->bindParam(":country_id", $country_id);
+    $stmt->bindParam(":levels_id", $levels_id);
+    $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
 }
 
