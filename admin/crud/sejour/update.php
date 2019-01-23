@@ -6,11 +6,11 @@ $image = getOneEntity("sejour", $id);
 $liste_countries = getAllEntities("country");
 $liste_tags = getAllEntities("tag");
 
-//$photo_liste_tags = getAllTagsByPhoto($id);
-//$photo_liste_tags_ids = [];
-//foreach ($photo_liste_tags as $tag) {
-//    $photo_liste_tags_ids[] = $tag["id"];
-//}
+$photo_liste_tags = getAllTagsByPhoto($id);
+$photo_liste_tags_ids = [];
+foreach ($photo_liste_tags as $tag) {
+    $photo_liste_tags_ids[] = $tag["id"];
+}
 
 require_once '../../layout/header.php';
 ?>
