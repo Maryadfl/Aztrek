@@ -3,8 +3,8 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 $id = $_POST['id'];
-$sejour = getOneEntity("sejour", $id);
 
+//fonction qui supprime la ligne
 $error = deleteEntity("sejour", $id);
 
 if ($error) {
@@ -15,3 +15,6 @@ if ($error) {
 unlink("../../../uploads/" . $sejour["image"]);
 
 header('Location: index.php');
+
+
+

@@ -15,7 +15,7 @@ $filename = $_FILES["image"]["name"];
 $tmp = $_FILES["image"]["tmp_name"];
 move_uploaded_file($tmp, "../../../uploads/" . $filename);
 
-insertSejour($title, $country_id, $filename, $nb_days, $description_short, $description, $levels_id);
+insertSejour($title, $country_id, $levels_id, $nb_days, $description_short, $description, $filename );
 
 header('Location: index.php');
 

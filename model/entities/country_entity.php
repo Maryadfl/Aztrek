@@ -27,11 +27,11 @@ function insertCountry(string $label, string $description, string $image) {
 }
 
 //fonction pour charger les modifications
-function updateCountry(int $id, string $label) {
+function updateCountry(int $id, string $label, string $description, string $filename) {
     global $connection;
 
 
-    $query = "UPDATE country SET label = :label WHERE id = :id ";
+    $query = "UPDATE country SET label = :label, description = :description, image = :image WHERE id = :id ";
 
 
     //Prépare la requête SQL
@@ -39,6 +39,8 @@ function updateCountry(int $id, string $label) {
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":id", $id);
     $stmt->bindParam(":label", $label);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":image", $filename);
 
     //Execute la requête SQL
     $stmt->execute();

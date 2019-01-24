@@ -37,17 +37,7 @@ require_once '../../layout/header.php';
         <label>Description</label>
         <textarea name="description" class="form-control"><?php echo $sejour["description"]; ?></textarea>
     </div>
-    <div class="form-group">
-        <label>Catégorie</label>
-        <select name="categorie_id" class="form-control">
-            <?php foreach ($liste_categories as $categorie) : ?>
-                <?php $selected = ($categorie["id"] == $photo["categorie_id"]) ? "selected" : ""; ?>
-                <option value="<?php echo $categorie["id"]; ?>" <?php echo $selected; ?>>
-                    <?php echo $categorie["titre"]; ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+
 
     <input type="hidden" name="id" value="<?php echo $id; ?>"> 
     <button type="submit" class="btn btn-success">

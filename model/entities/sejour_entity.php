@@ -98,5 +98,32 @@ function insertSejour (string $title, int $country_id, string $image, int $nb_da
     $stmt->execute();
 }
 
+//fonction pour charger les modifications d'un séjour
+function updateSejour(int $id, string $title, string $description_short, string $description, int $nb_days, string $country_id, string $levels_id, string $filename) {
+    global $connection;
+
+
+    $query = "UPDATE sejour SET title = :title, description_short = : description_short, description = : description, nb_days = : nb_days, country_id = :country_id, levels_id =:levels_id, image = :image
+    WHERE id = :id ";
+
+
+    //Prépare la requête SQL
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":title", $title);
+    $stmt->bindParam(":description_short", $description_short);
+    $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":nb_days", $nb_days);
+    $stmt->bindParam(":country_id", $country_id);
+    $stmt->bindParam(":levels_id", $levels_id);
+    $stmt->bindParam(":image", $filename);
+
+    //Execute la requête SQL
+    $stmt->execute();
+
+
+}
+
 
 
