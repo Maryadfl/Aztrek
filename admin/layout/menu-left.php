@@ -21,6 +21,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link <?php echo isActive("/crud/category/") ? 'active' : ''; ?>" href="<?php echo SITE_ADMIN; ?>crud/category/">
+                    <i class="fa fa-binoculars"></i>
+                    Categories
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fa fa-tags"></i>
                     Tags
