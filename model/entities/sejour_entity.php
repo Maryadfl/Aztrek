@@ -78,12 +78,12 @@ function getOneSejour(int $id): array {
 }
 
 //pour insérer un nouveau séjour
-function insertSejour (string $title, int $country_id, string $image, int $nb_days, string $description_short, string $description,  int $levels_id) {
+function insertSejour (string $title, int $country_id,  string $levels_id, int $nb_days, string $category_id, string $description_short, string $description, string $image) {
     global $connection;
 
     $query = "
-    INSERT INTO sejour (title, image, nb_days, description, description_short, country_id, levels_id) 
-    VALUES (:title, :image, :nb_days, :description, :description_short, :country_id, :levels_id)
+    INSERT INTO sejour (title, image, nb_days, description, description_short, country_id, levels_id, category_id) 
+    VALUES (:title, :image, :nb_days, :description, :description_short, :country_id, :levels_id, :category_id)
     ";
 
     $stmt = $connection->prepare($query);
@@ -94,16 +94,18 @@ function insertSejour (string $title, int $country_id, string $image, int $nb_da
     $stmt->bindParam(":nb_days", $nb_days);
     $stmt->bindParam(":country_id", $country_id);
     $stmt->bindParam(":levels_id", $levels_id);
+    $stmt->bindParam(":category_id", $category_id);
 
     $stmt->execute();
 }
 
+
 //fonction pour charger les modifications d'un séjour
-function updateSejour(int $id, string $title, string $description_short, string $description, int $nb_days, string $country_id, string $levels_id, string $filename) {
+function updateSejour(int $id, string $title, string $country_id, int $levels_id, int $nb_days, int $category_id, string $description_short, string $description, string $filename) {
     global $connection;
 
 
-    $query = "UPDATE sejour SET title = :title, description_short = : description_short, description = : description, nb_days = : nb_days, country_id = :country_id, levels_id =:levels_id, image = :image
+    $query = "UPDATE sejour SET title = :title, description_short = :description_short, description = :description, nb_days = :nb_days, category_id = :category_id, country_id = :country_id, levels_id = :levels_id, image = :image
     WHERE id = :id ";
 
 
@@ -115,6 +117,7 @@ function updateSejour(int $id, string $title, string $description_short, string 
     $stmt->bindParam(":description_short", $description_short);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":nb_days", $nb_days);
+    $stmt->bindParam(":category_id", $category_id);
     $stmt->bindParam(":country_id", $country_id);
     $stmt->bindParam(":levels_id", $levels_id);
     $stmt->bindParam(":image", $filename);

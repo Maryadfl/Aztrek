@@ -35,18 +35,18 @@ getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Am�
                                             <li class="nivel"><i class="fas fa-mountain"></i> <?= $sejour["levels"] ; ?></li>
 
                                         </ul>
-                                      <h5 class="card-title text-info"><?= $sejour["description_short"]; ?></h5>
+                                      <h5 class="card-title text-info text-center"><?= $sejour["description_short"]; ?></h5>
                                       <p class="card-text"><?= $sejour["description"]; ?></p>
                                     </div>
                               </div>
                        
-                         <div class="col-sm-4 text-center">
-
-                                      <div class="">
-                                          <?php include "include/sejour_inc.php" ?>
-                                      </div>
-
-                             </div>
+<!--                         <div class="col-sm-4 text-center">-->
+<!---->
+<!--                                      <div class="">-->
+<!--                                          --><?php //include "include/sejour_inc.php" ?>
+<!--                                      </div>-->
+<!---->
+<!--                             </div>-->
 
                 </article>
 

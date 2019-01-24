@@ -2,15 +2,11 @@
 require_once '../../../model/database.php';
 
 $id = $_GET['id'];
-$image = getOneEntity("sejour", $id);
-$liste_countries = getAllEntities("country");
-$liste_tags = getAllEntities("tag");
+$sejour = getOneEntity("sejour", $id);
+$countries = getAllEntities("country");
+$levels = getAllEntities("levels");
+$categories = getAllEntities("category");
 
-$photo_liste_tags = getAllTagsByPhoto($id);
-$photo_liste_tags_ids = [];
-foreach ($photo_liste_tags as $tag) {
-    $photo_liste_tags_ids[] = $tag["id"];
-}
 
 require_once '../../layout/header.php';
 ?>
@@ -20,7 +16,7 @@ require_once '../../layout/header.php';
 <form action="update_query.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label>Titre</label>
-        <input type="text" name="titre" value="<?php echo $sejour["title"]; ?>" class="form-control" placeholder="Titre" required>
+        <input type="text" name="title" value="<?php echo $sejour["title"]; ?>" class="form-control" placeholder="Titre" required>
     </div>
     <div class="form-group">
         <label>Image</label>
@@ -30,8 +26,42 @@ require_once '../../layout/header.php';
         <?php endif; ?>
     </div>
     <div class="form-group">
+        <label>Pays</label>
+        <select name="country_id" class="form-control">
+            <?php foreach ($countries as $country) : ?>
+                <option value="<?php echo $country["id"]; ?>">
+                    <?php echo $country["label"]; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Niveau</label>
+        <select name="levels_id" class="form-control">
+            <?php foreach ($levels as $level) : ?>
+                <option value="<?php echo $level["id"]; ?>">
+                    <?php echo $level["label"]; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Catégorie</label>
+        <select name="category_id" class="form-control">
+            <?php foreach ($categories as $category) : ?>
+                <option value="<?php echo $category["id"]; ?>">
+                    <?php echo $category["label"]; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Nombre de jours</label>
+        <input type="number" name="nb_days" class="form-control" value="<?php echo $sejour["nb_days"]; ?>" required>
+    </div>
+    <div class="form-group">
         <label>Description courte</label>
-        <textarea name="description" class="form-control"><?php echo $sejour["description_short"]; ?></textarea>
+        <textarea name="description_short" class="form-control"><?php echo $sejour["description_short"]; ?></textarea>
     </div>
     <div class="form-group">
         <label>Description</label>

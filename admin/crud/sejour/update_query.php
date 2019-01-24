@@ -11,9 +11,10 @@ $description_short = $_POST['description_short'];
 $description = $_POST['description'];
 $country_id = $_POST['country_id'];
 $levels_id = $_POST['levels_id'];
+$nb_days = $_POST['nb_days'];
+$category_id = $_POST['category_id'];
 
 
-$tag_ids = isset($_POST['tag_ids']) ? $_POST['tag_ids'] : [];
 
 // Upload de l'image
 if ($_FILES["image"]["error"] == 0) {
@@ -25,7 +26,7 @@ if ($_FILES["image"]["error"] == 0) {
     $filename = $sejour["image"];
 }
 
-updateSejour($id, $title, $description_short, $description, $country_id, $levels_id, $filename,  $tag_ids);
+updateSejour($id, $title, $country_id, $levels_id, $nb_days, $category_id, $description_short, $description, $filename);
 
 header('Location: index.php');
 
