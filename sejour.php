@@ -80,7 +80,7 @@ getHeader("Séjours", "Aztrek, site de voyage spécialisé dans les treks en Am�
                             <th scope="row"><?= $depart["date_departure"] ; ?></th>
                             <td><?= $depart["price"] ; ?></td>
                               <td><?= $depart["seat_available"] ; ?></td>
-                            <td><a class="btn btn-info mx-auto" href="<?=SITE_URL ?>/create_account.php">S'inscire</a></td>
+                            <td><a href="<?=SITE_URL ?>/create_account.php" type="button" class="btn bg-primary">S'inscrire</a></td>
 
                            
                           </tr>
